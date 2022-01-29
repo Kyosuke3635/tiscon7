@@ -90,9 +90,7 @@ public class UserOrderDto {
         this.box = box;
     }
 
-    public int getBed() {
-        return Integer.parseInt(bed);
-    }
+    public int getBed() { return Integer.parseInt(bed); }
 
     public void setBed(String bed) {
         this.bed = bed;
