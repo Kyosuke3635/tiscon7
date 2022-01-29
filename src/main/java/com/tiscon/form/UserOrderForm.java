@@ -55,6 +55,17 @@ public class UserOrderForm {
     @NotNull
     private boolean washingMachineInstallation;
 
+    //引っ越し月
+    private String month;
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
     public String getCustomerName() {
         return customerName;
     }
