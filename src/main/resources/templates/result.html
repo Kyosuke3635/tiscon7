@@ -60,6 +60,11 @@
 
 
         <tr>
+          <th>引越し月 <p class ="error-message", th:each="err : ${#fields.errors('email')}" th:text="${err}"></p></th>
+          <td><span th:text="*{month}"></span></td>
+          <input type="hidden" name="month" id="month" th:value="*{month}"/>
+        </tr>
+        <tr>
           <th style="width: 40%">現在の住所（都道府県）</th>
           <td>
             <span th:each="prefecture : ${prefectures}" th:text="${prefecture.prefectureName}" th:if="${prefecture.prefectureId}==*{oldPrefectureId}">東京</span>

@@ -81,12 +81,12 @@ public class EstimateController {
      */
     //inputのご入力ないようの確認ボタン
     /**
-    @PostMapping(value = "submit", params = "confirm")
-    String confirm(UserOrderForm userOrderForm, Model model) {
-        model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
-        model.addAttribute("userOrderForm", userOrderForm);
-        return "confirm";
-    }*/
+     @PostMapping(value = "submit", params = "confirm")
+     String confirm(UserOrderForm userOrderForm, Model model) {
+     model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+     model.addAttribute("userOrderForm", userOrderForm);
+     return "confirm";
+     }*/
     @PostMapping(value = "submit", params = "confirm")
     String confirm(@Validated UserOrderForm userOrderForm, BindingResult result,Model model) {
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
