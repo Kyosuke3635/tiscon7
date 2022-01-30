@@ -67,10 +67,17 @@ public class EstimateController {
      * @param model 遷移先に連携するデータ
      * @return 遷移先
      */
+
     @PostMapping(value = "order", params = "backToTop")
     String backToTop(Model model) {
         return "top";
     }
+
+    @PostMapping(value = "submit", params = "backToTop")
+    String backToTop2(Model model) {
+        return "top";
+    }
+
 
     /**
      * 確認画面に遷移する。
