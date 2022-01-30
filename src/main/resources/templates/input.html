@@ -30,10 +30,12 @@
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL(半角数字のみ)<p class ="error-message", th:each="err : ${#fields.errors('tel')}" th:text="${err}"></p></label>
+          <p><label for="oldPrefectureId" class = "example"> 例 00000000000 </label></p>
           <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678"/>
         </div>
         <div class="form-group">
           <label for="email">連絡先メールアドレス<p class ="error-message", th:each="err : ${#fields.errors('email')}" th:text="${err}"></p></label>
+          <p><label for="oldPrefectureId" class = "example"> 例 aaa@example.com </label></p>
           <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
         </div>
 
@@ -65,6 +67,7 @@
         </div>
         <div class="form-group">
           <label for="oldAddress">現在の住所（市区町村以下）<p class ="error-message", th:each="err : ${#fields.errors('oldAddress')}" th:text="${err}"></p></label>
+          <p><label for="oldPrefectureId" class = "example"> 例 新宿区西新宿1-1-1</label></p>
           <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
                  class="form-control" value="新宿区西新宿1-1-1"/>
         </div>
@@ -77,6 +80,7 @@
         </div>
         <div class="form-group">
           <label for="newAddress">引越先の住所（市区町村以下）<p class ="error-message", th:each="err : ${#fields.errors('newAddress')}" th:text="${err}"></p></label>
+          <p><label for="oldPrefectureId" class = "example"> 例 札幌市南区1 </label></p>
           <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
                  value="札幌市南区1"/>
         </div>
@@ -85,6 +89,7 @@
       <div class="sub-title">お荷物情報</div>
         <div class="form-group">
           <label for="box">段ボールの個数(半角数字) <p class ="error-message", th:each="err : ${#fields.errors('box')}" th:text="${err}"></p></label>
+          <p><label for="oldPrefectureId" class = "example"> 参考　一人暮らし：10～15個 2人家族：20～30個 3人家族：30～50個 4人家族：40～60個 5人以上のご家庭：50個以上</label></p>
           <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10"/>
         </div>
         <div class="form-group">

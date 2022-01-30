@@ -24,6 +24,9 @@ public class UserOrderForm {
     @NotBlank
     private String email;
 
+    //引っ越し月
+    private String month;
+
     @NotBlank
     private String oldPrefectureId;
 
@@ -55,17 +58,6 @@ public class UserOrderForm {
     @NotNull
     private boolean washingMachineInstallation;
 
-    //引っ越し月
-    private String month;
-
-    public String getMonth() {
-        return month;
-    }
-
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
     public String getCustomerName() {
         return customerName;
     }
@@ -88,6 +80,14 @@ public class UserOrderForm {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     public String getOldPrefectureId() {

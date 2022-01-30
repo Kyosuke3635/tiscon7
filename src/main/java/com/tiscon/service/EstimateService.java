@@ -7,6 +7,7 @@ import com.tiscon.domain.Customer;
 import com.tiscon.domain.CustomerOptionService;
 import com.tiscon.domain.CustomerPackage;
 import com.tiscon.dto.UserOrderDto;
+import com.tiscon.form.UserOrderForm;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -69,7 +70,7 @@ public class EstimateService {
      * @param dto 見積もり依頼情報
      * @return 概算見積もり結果の料金
      */
-    public Integer getPrice(UserOrderDto dto) {
+    public Integer getPrice(UserOrderDto dto, String month) {
 
         //距離計算部分start
         double distance = estimateDAO.getDistance(dto.getOldPrefectureId(), dto.getNewPrefectureId());
@@ -96,11 +97,11 @@ public class EstimateService {
         }
 
         //季節係数の処理
-        int season = 0; //ここで引っ越し付きを入力
         double N = 1.0;
-        if(season == 3 || season == 4) {
+        int month_int =  Integer.parseInt(month); //文字列で扱うとif文での条件検出ができなかったのでint型に変換
+        if(month_int == 3 || month_int == 4) {
             N = 1.5;
-        } else if (season == 9) {
+        } else if (month_int == 9){
             N = 1.2;
         }
 
